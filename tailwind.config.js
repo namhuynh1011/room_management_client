@@ -4,7 +4,19 @@ module.exports = {
     "./public/index.html"
   ],
   theme: {
-    extend: {},
+    extend: {
+      with: {
+        '1100': '1100px'
+      },
+      backgroundColor: {
+        primary: '#f5f5f5',
+        secondary1: '#1266dd',
+        secondary2: '#f73859',
+      },
+      mexWidth:{
+        '600': '600px',
+      },
+    },
   },
   plugins: [],
 }
