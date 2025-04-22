@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import logo from "../../assets/logowithout.png";
+import logo from "../../assets/logowithout3.png";
 import { Button } from "../../components";
 import icons from "../../ultils/icon";
 import { useNavigate } from "react-router-dom";
@@ -11,7 +11,7 @@ const Header = () => {
   const navigate = useNavigate();
   const goLogin = useCallback(() => {
     navigate(path.LOGIN);
-  }, []);
+  }, ['']);
 
   return (
     <div className="w-full flex justify-center">
