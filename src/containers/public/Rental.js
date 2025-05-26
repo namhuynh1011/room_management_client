@@ -8,7 +8,7 @@ import { formatVietnameseToString } from '../../ultils/Common/formatVietnameseTo
 
 const Rental = () => {
     const { prices, areas, categories } = useSelector(state => state.app)
-    const [categoryCurrent, setCategoryCurrent] = useState({})
+    const [category, setCategoryCurrent] = useState({})
     const [categoryCode, setCategoryCode] = useState('none')
     const location = useLocation()
     const dispatch = useDispatch()
@@ -24,8 +24,8 @@ const Rental = () => {
     return (
         <div className='w-full flex flex-col gap-3' >
             <div>
-                <h1 className='text-[28px] font-bold' >{categoryCurrent?.header}</h1>
-                <p className='text-base text-gray-700'>{categoryCurrent?.subheader}</p>
+                <h1 className='text-[28px] font-bold' >{category?.header}</h1>
+                <p className='text-base text-gray-700'>{category?.subheader}</p>
             </div>
             <Province />
             <div className='w-full flex gap-4'>

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { ItemSidebar, RelatedPost } from '../../components'
 import { List, Pagination } from './index'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 
 const SearchDetail = () => {

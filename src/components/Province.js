@@ -11,6 +11,8 @@ const Province = () => {
                         key={item.id}
                         image={item.image}
                         name={item.name}
+                        provinceCode ={item.provinceCode}
+
                     />
                 )
             })}

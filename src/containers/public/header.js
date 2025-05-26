@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
-import logo from '../../assets/logowithoutbg.png'
+import logo from '../../assets/logowithout3.png'
 import { Button, User } from '../../components'
 import icons from '../../ultils/icons'
 import { useNavigate, Link, useSearchParams } from 'react-router-dom'
@@ -37,7 +37,7 @@ const Header = () => {
                 </Link>
                 <div className='flex items-center gap-1'>
                     {!isLoggedIn && <div className='flex items-center gap-1'>
-                        <small>Phongtro123.com xin chào !</small>
+                        <small>friendhome.com xin chào !</small>
                         <Button
                             text={'Đăng nhập'}
                             textColor='text-white'
@@ -86,12 +86,14 @@ const Header = () => {
                             </span>
                         </div>}
                     </div>}
-                    <Button
-                        text={'Đăng tin mới'}
-                        textColor='text-white'
-                        bgColor='bg-secondary2'
-                        IcAfter={AiOutlinePlusCircle}
-                    />
+                    <Link to="/he-thong/tao-moi-bai-dang">
+                        <Button
+                            text="Đăng tin mới"
+                            textColor="text-white"
+                            bgColor="bg-secondary2"
+                            IcAfter={AiOutlinePlusCircle}
+                        />
+                    </Link>
                 </div>
             </div>
         </div>
