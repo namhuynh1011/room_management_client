@@ -22,13 +22,14 @@ const DetailPost = () => {
     const formatDate = (dateString) => {
     try {
         if (!dateString) return 'Không rõ';
-        const [day, month, year] = dateString.split('/');
-
-        // Nếu kiểu dữ liệu là dd/mm/yyyy thì sắp xếp lại theo yyyy-mm-dd
-        const isoDate = `${year}-${month}-${day}`;
-        const date = new Date(isoDate);
-
-        if (isNaN(date)) return 'Không rõ';
+        // Tìm phần ngày tháng năm theo định dạng dd/mm/yyyy
+        const dateMatch = dateString.match(/(\d{2}\/\d{2}\/\d{4})/);
+        if (!dateMatch) return 'Không rõ';
+        const [day, month, year] = dateMatch[1].split('/');
+        // Tạo đối tượng Date (lưu ý: tháng trong JS tính từ 0-11)
+        const date = new Date(year, month - 1, day);
+        if (isNaN(date.getTime())) return 'Không rõ';
+        // Chỉ trả về ngày/tháng/năm theo định dạng vi-VN
         return date.toLocaleDateString('vi-VN');
     } catch {
         return 'Không rõ';
@@ -138,7 +139,8 @@ const DetailPost = () => {
                                     </tr>
                                     <tr className="border">
                                         <td className="p-2 border font-medium">Zalo</td>
-                                        <td className="p-2 border">{posts[0]?.user?.zalo}</td>
+                                        <td className="p-2 border" 
+                                        href={`https://zalo.me/${posts[0]?.user?.zalo}`}>{posts[0]?.user?.zalo}</td>
                                     </tr>
 
                                 </tbody>

@@ -42,10 +42,10 @@ const ManagePost = () => {
 
     useEffect(() => {
         if(status === 1){
-            const activePost = postOfCurrent.filter(item => chẹckStatus(item?.overviews?.expired.split(' ')[2]))
+            const activePost = postOfCurrent.filter(item => chẹckStatus(item?.overviews?.expired.split(' ')[3]))
             setPosts(activePost)
         }else if(status === 2){
-            const expiredPost = postOfCurrent.filter(item => !chẹckStatus(item?.overviews?.expired.split(' ')[2]))
+            const expiredPost = postOfCurrent.filter(item => !chẹckStatus(item?.overviews?.expired.split(' ')[3]))
             setPosts(expiredPost)
         }else if(!status){
             setPosts(postOfCurrent)
@@ -91,7 +91,7 @@ const ManagePost = () => {
                                 <td className="border px-2 flex-1 h-full flex justify-center items-center">{item?.attributes?.price}</td>
                                 <td className="border px-2 flex-1 h-full flex justify-center items-center">{item?.overviews?.created}</td>
                                 <td className="border px-2 flex-1 h-full flex justify-center items-center">{item?.overviews?.expired}</td>
-                                <td className="border px-2 flex-1 h-full flex justify-center items-center">{chẹckStatus(item?.overviews?.expired.split(' ')[2]) ? "Đang Hoạt Động" : "Hết Hạn"}</td>
+                                <td className="border px-2 flex-1 h-full flex justify-center items-center">{chẹckStatus(item?.overviews?.expired.split(' ')[3]) ? "Đang Hoạt Động" : "Hết Hạn"}</td>
                                 <td className="border px-2 flex-1 h-full flex justify-center items-center gap-4">
                                     <Button text="Sửa" bgColor="bg-green-600" textColor="text-white"
                                         onClick={() => {

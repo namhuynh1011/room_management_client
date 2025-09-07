@@ -36,12 +36,12 @@ const Navigation = ({ isAdmin }) => {
                         </div>
                     )
                 })}
-                <NavLink
+                {/* <NavLink
                     to={path.CONTACT}
                     className={({ isActive }) => isActive ? active : notActive}
                 >
                     Liên hệ
-                </NavLink>
+                </NavLink> */}
             </div>
         </div>
     )
